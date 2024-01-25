@@ -1,12 +1,10 @@
 import Layout from "@/components/Layout";
-import Navbar from "@/components/Navbar";
 import WineCard from "@/components/WineCard";
 import axios from "axios";
 
 export async function getServerSideProps(){
   const res = await axios.get("http://localhost:3000/api/wines");
 
-  console.log(res.data)
   return {
     props:{
       data:res.data
@@ -17,8 +15,10 @@ export async function getServerSideProps(){
 export default function Home({data}) {
   return (
     <Layout>
-      <div className="pt-32 flex-row flex w-full justify-center">
-        {data.map((wine) => <WineCard origin={wine.country} type={wine.type} name={wine.name} key={wine.id} />)}
+      <div className="flex w-full justify-center">
+      <div className="pt-32 flex-row flex justify-center flex-wrap w-[80%]">
+        {data.map((wine) => <WineCard origin={wine.origin} type={wine.type} name={wine.name} key={wine.id} />)}
+      </div>
       </div>
     </Layout>
   );

@@ -15,13 +15,15 @@ import { initializeApp } from 'firebase/app'
 import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
-    apiKey: 'YOUR_API_KEY',
-    authDomain: 'YOUR_AUTH_DOMAIN',
-    projectId: 'YOUR_PROJECT_ID',
-    storageBucket: 'YOUR_STORAGE_BUCKET',
-    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-    appId: 'YOUR_APP_ID',
-};
+    apiKey: "AIzaSyDvZoAiVWpOMhk_WvwGyNCEYIbxOdaAjlo",
+    authDomain: "wine-gallery-84aa1.firebaseapp.com",
+    databaseURL: "https://wine-gallery-84aa1-default-rtdb.firebaseio.com",
+    projectId: "wine-gallery-84aa1",
+    storageBucket: "wine-gallery-84aa1.appspot.com",
+    messagingSenderId: "578250409828",
+    appId: "1:578250409828:web:03a229040cfa06d7795c71",
+    measurementId: "G-HML5QMKC6M"
+  };
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
