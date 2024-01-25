@@ -1,10 +1,15 @@
+import { getWines } from '/wine-gallery-v2/backend/database/firebase';
 
-const wines = [
-    { id: 1, name: "Cabernet Sauvignon", type: "Red" },
-    { id: 2, name: "Chardonnay", type: "White" },
-    // ... more wines
-];
-
-export default function(req, res) {
-    res.status(200).json(wines);
+export default async (req, res) => {
+    if (req.method === 'GET') {
+        try {
+            const wines = await getWines();
+            res.status(200).json(wines);
+        } catch (error) {
+            console.error('Error during wines retrieval:', error);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
+    } else {
+        res.status(405).json({ error: 'Method Not Allowed' });
+    }
 };
