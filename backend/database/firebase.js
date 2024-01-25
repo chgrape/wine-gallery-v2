@@ -3,12 +3,9 @@ import {
     initializeApp,
     getAuth,
     createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
     updateProfile,
-    sendPasswordResetEmail,
     updateEmail,
     updatePassword,
-    sendEmailVerification,
     deleteUser as deleteAccount,
     signOut,
 } from 'firebase/auth';
@@ -76,12 +73,12 @@ export const createUser = async (email, password) => {
     }
 };
 
-export const getUserById = (userId) => {
+export const getUser = () => {
     const user = auth.currentUser;
     return user ? { userId: user.uid, email: user.email } : null;
 };
 
-export const updateUserProfile = async (userId, updatedData) => {
+export const updateUserProfile = async (updatedData) => {
     try {
         await updateProfile(auth.currentUser, updatedData);
     } catch (error) {
@@ -89,7 +86,7 @@ export const updateUserProfile = async (userId, updatedData) => {
     }
 };
 
-export const updateEmailForUser = async (userId, newEmail) => {
+export const updateEmailForUser = async (newEmail) => {
     try {
         await updateEmail(auth.currentUser, newEmail);
     } catch (error) {
@@ -97,7 +94,7 @@ export const updateEmailForUser = async (userId, newEmail) => {
     }
 };
 
-export const updatePasswordForUser = async (userId, newPassword) => {
+export const updatePasswordForUser = async (newPassword) => {
     try {
         await updatePassword(auth.currentUser, newPassword);
     } catch (error) {
@@ -106,7 +103,7 @@ export const updatePasswordForUser = async (userId, newPassword) => {
 };
 
 
-export const deleteUserProfile = async (userId) => {
+export const deleteUserProfile = async () => {
     try {
         await deleteAccount(auth.currentUser);
     } catch (error) {

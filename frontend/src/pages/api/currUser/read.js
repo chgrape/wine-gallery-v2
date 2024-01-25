@@ -1,10 +1,8 @@
-import { getUserById } from '/wine-gallery-v2/backend/database/firebase';
+import { getUser } from '/wine-gallery-v2/backend/database/firebase';
 
-export default async (req, res) => {
-    const { userId } = req.query;
-
+export default async (res) => {
     try {
-        const user = getUserById(userId);
+        const user = getUser();
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }

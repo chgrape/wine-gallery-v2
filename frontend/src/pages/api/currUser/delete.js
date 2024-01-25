@@ -2,10 +2,8 @@ import { deleteUserProfile } from '/wine-gallery-v2/backend/database/firebase';
 
 export default async (req, res) => {
     if (req.method === 'DELETE') {
-        const { userId } = req.query;
-
         try {
-            await deleteUserProfile(userId);
+            await deleteUserProfile();
             res.status(200).json({ message: 'User deleted successfully' });
         } catch (error) {
             console.error('Error during user deletion:', error);

@@ -2,11 +2,9 @@ import { updateUserProfile } from '/wine-gallery-v2/backend/database/firebase';
 
 export default async (req, res) => {
     if (req.method === 'PUT') {
-        const { userId } = req.query;
         const updatedData = req.body;
-
         try {
-            await updateUserProfile(userId, updatedData);
+            await updateUserProfile(updatedData);
             res.status(200).json({ message: 'User updated successfully' });
         } catch (error) {
             console.error('Error during user update:', error);
