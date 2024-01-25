@@ -1,6 +1,6 @@
 const wines = {
-    1: { id: 1, name: "Cabernet Sauvignon", type: "Red", /* ... */ },
-    2: { id: 2, name: "Chardonnay", type: "White", /* ... */ },
+    1: { id: 1, name: "Cabernet Sauvignon", type: "Red" /* ... */ },
+    2: { id: 2, name: "Chardonnay", type: "White" /* ... */ },
     // ... more wines
 };
 

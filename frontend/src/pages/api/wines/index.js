@@ -1,7 +1,7 @@
 
 const wines = [
-    { id: 1, name: "Cabernet Sauvignon", type: "Red" },
-    { id: 2, name: "Chardonnay", type: "White" },
+    { id: 1, name: "Cabernet Sauvignon", type: "Red",  region: "Napa Valley", country: "United States", },
+    { id: 2, name: "Chardonnay", type: "White", region: "Bordeaux", country: "France", },
     // ... more wines
 ];
 
