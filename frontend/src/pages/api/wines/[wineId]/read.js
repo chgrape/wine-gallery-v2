@@ -1,4 +1,4 @@
-import { getWineById } from '/wine-gallery-v2/backend/database/firebase';
+import { getWineById } from '../../../../../../backend/database/firebase';
 
 
 export default async (req, res) => {

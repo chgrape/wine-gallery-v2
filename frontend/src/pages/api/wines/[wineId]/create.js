@@ -1,4 +1,4 @@
-import { createWine } from '/wine-gallery-v2/backend/database/firebase';
+import { createWine } from '../../../../../../backend/database/firebase';
 
 export default async (req, res) => {
     if (req.method === 'POST') {

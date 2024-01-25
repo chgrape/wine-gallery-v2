@@ -1,4 +1,4 @@
-import { updateWine } from '/wine-gallery-v2/backend/database/firebase';
+import { updateWine } from '../../../../../../backend/database/firebase';
 
 export default async (req, res) => {
     if (req.method === 'PUT') {

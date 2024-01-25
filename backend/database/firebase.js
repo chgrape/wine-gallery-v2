@@ -1,6 +1,5 @@
 // path/to/your/firebase.js
 import {
-    initializeApp,
     getAuth,
     createUserWithEmailAndPassword,
     updateProfile,
@@ -9,6 +8,9 @@ import {
     deleteUser as deleteAccount,
     signOut,
 } from 'firebase/auth';
+
+
+import { initializeApp } from 'firebase/app'
 
 import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore/lite';
 

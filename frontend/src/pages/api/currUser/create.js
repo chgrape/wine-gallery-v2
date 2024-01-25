@@ -1,4 +1,4 @@
-import { createUser } from '/wine-gallery-v2/backend/database/firebase';
+import { createUser } from '../../../../../backend/database/firebase';
 
 export default async (req, res) => {
     if (req.method === 'POST') {

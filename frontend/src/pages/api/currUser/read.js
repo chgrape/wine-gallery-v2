@@ -1,4 +1,4 @@
-import { getUser } from '/wine-gallery-v2/backend/database/firebase';
+import { getUser } from '../../../../../backend/database/firebase';
 
 export default async (res) => {
     try {

@@ -1,4 +1,4 @@
-import { deleteUserProfile } from '/wine-gallery-v2/backend/database/firebase';
+import { deleteUserProfile } from '../../../../../backend/database/firebase';
 
 export default async (req, res) => {
     if (req.method === 'DELETE') {
