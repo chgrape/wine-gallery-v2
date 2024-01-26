@@ -1,4 +1,4 @@
-import { getWines, createWine, deleteWine } from '../../../../../backend/database/firebase';
+import { getWines, createWine, deleteWine, updateWine } from '../../../../../backend/database/firebase';
 
 export default async (req, res) => {
     if (req.method === 'GET') {
@@ -26,6 +26,17 @@ export default async (req, res) => {
             res.status(200).json({ message: 'Wine deleted successfully' });
         } catch (error) {
             console.error('Error during wine deletion:', error);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
+    } else  if (req.method === 'PUT') {
+        const { wineId } = req.query;
+        const updatedData = req.body;
+
+        try {
+            await updateWine(wineId, updatedData);
+            res.status(200).json({ message: 'Wine updated successfully' });
+        } catch (error) {
+            console.error('Error during wine update:', error);
             res.status(500).json({ error: 'Internal Server Error' });
         }
     } else {

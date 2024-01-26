@@ -14,6 +14,12 @@ const WineCard = ({type,origin,name,id}) => {
         router.push('/')
     }
 
+    const handleUpdate = (e) =>{
+        e.preventDefault();
+
+        router.push(`/update?wineId=${id}`)
+    }
+
     return (
         <div className="h-[28rem] w-[20rem] hover:shadow-2xl hover:scale-105 shadow-md rounded-xl py-8 px-5 m-5 flex justify-between flex-col duration-300">
             <div className="flex flex-row justify-between items-center h-[70%]">
@@ -23,13 +29,16 @@ const WineCard = ({type,origin,name,id}) => {
             <h1 className="text-xs text-neutral-400">4035 reviews</h1>
             </div>
             </div>
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-row justify-between items-end">
                 <div>
                     <h2 className="text-neutral-500">{type}</h2>
                     <h1 className="font-bold text-xl my-2">{name}</h1>
                     <h2>{origin}</h2>
                 </div>
-                <button onClick={handleDelete} className="px-4 py-2 border-2 rounded-lg">Delete</button>
+                <div className="flex flex-col">
+                <button onClick={handleUpdate} className="duration-300 hover:bg-neutral-100 mb-2 h-16 px-4 py-2 border-2 rounded-lg">Edit</button>
+                <button onClick={handleDelete} className="h-16 duration-300 hover:bg-neutral-100 px-4 py-2 border-2 rounded-lg">Delete</button>
+                </div>
             </div>
         </div>
     );
