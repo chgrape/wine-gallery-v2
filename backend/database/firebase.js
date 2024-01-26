@@ -60,7 +60,7 @@ export const updateWine = async (wineId, updatedData) => {
 
 export const deleteWine = async (wineId) => {
     try {
-        await deleteDoc(getWineById(wineId));
+        await deleteDoc(await getWineById(wineId));
     } catch (error) {
         throw error;
     }

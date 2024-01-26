@@ -17,7 +17,7 @@ export default function Home({data}) {
     <Layout>
       <div className="flex w-full justify-center">
       <div className="pt-32 flex-row flex justify-center flex-wrap w-[80%]">
-        {data.map((wine) => <WineCard origin={wine.origin} type={wine.type} name={wine.name} key={wine.id} />)}
+        {data.map((wine) => <WineCard origin={wine.origin} type={wine.type} name={wine.name} key={wine.id} id={wine.id} />)}
       </div>
       </div>
     </Layout>
